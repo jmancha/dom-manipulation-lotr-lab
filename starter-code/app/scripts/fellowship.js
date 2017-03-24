@@ -32,6 +32,8 @@ function makeMiddleEarth() {
     middleEarth.appendChild(article);
     var h1 = document.createElement('h1');
     h1.textContent = lands[i];
+    //sets the id
+    h1.setAttribute("id", lands[i]);
     article.appendChild(h1);
     body.appendChild(middleEarth);
   }    
@@ -75,13 +77,12 @@ console.log(hobbits);
     var keepItSecretKeepItSafe = document.createElement("ul");
     keepItSecretKeepItSafe.setAttribute("id","keepItSecretKeepItSafe");
     for (var i = 0; i < safe.length; i++) {
-    var article = document.createElement("li");
-    keepItSecretKeepItSafe.appendChild(article);
-    article.textContent = safe[i];
-    article.appendChild (h1);
-    document.querySelector(articles);
-    body.appendChild(keepItSecretKeepItSafe);
-
+      var article = document.createElement("li");
+      keepItSecretKeepItSafe.appendChild(article);
+      article.textContent = safe[i];
+      article.appendChild (h1);
+      document.querySelector(articles);
+      body.appendChild(keepItSecretKeepItSafe);
   }
 }
   // create a div with an id of 'the-ring'
@@ -96,18 +97,46 @@ console.log(hobbits);
 
 function makeBuddies() {
   // create an aside tag
+  var buddiesContainer = document.createElement("aside");
   // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
-}
+  buddiesContainer.setAttribute("id","buddiesContainer");
+  // attach an unordered list of the 'buddies' in the aside
+  var buddylist = document.createElement("ul");
 
+  //var buddies = document.createElement("li");
+  //
+  for (var i = 0; i < buddies.length; i++){
+    //
+    //console.log(buddies[i]);
+    var aside = document.createElement("li");
+      aside.textContent = buddies[i];
+      aside.setAttribute("id", buddies[i]);
+      buddylist.appendChild(aside);
+
+  }
+
+  buddiesContainer.appendChild(buddylist);
+  // insert your aside as a child element of rivendell
+   var Rivendell = document.getElementById("Rivendell");
+   //console.log(Rivendell);
+
+   Rivendell.appendChild(buddiesContainer);
+
+  }
+    makeBuddies();
 
 // Part 5
 
 
 function beautifulStranger() {
+
   // change the 'Strider' textnode to 'Aragorn'
+  var strider = document.getElementById("Strider");
+  strider.textContent = "Aragorn";
 }
 
+   beautifulStranger();
+   
 
 // Part 6
 
